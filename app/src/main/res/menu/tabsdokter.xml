@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_konsultasi_dokter"
+        android:title="Konsultasi"
+        android:icon="@drawable/consultation" />
+
+    <item
+        android:id="@+id/tab_makanan_dokter"
+        android:icon="@drawable/food"
+        android:title="Makanan" />
+
+    <item
+        android:id="@+id/tab_obat_dokter"
+        android:icon="@drawable/medicine"
+        android:title="Obat" />
+
+    <item
+        android:id="@+id/tab_profil_dokter"
+        android:icon="@drawable/ic_person_24"
+        android:title="Profil" />
+</menu>

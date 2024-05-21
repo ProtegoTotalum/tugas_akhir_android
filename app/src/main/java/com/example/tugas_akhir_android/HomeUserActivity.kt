@@ -1,0 +1,106 @@
+package com.example.tugas_akhir_android
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.util.Log
+import androidx.fragment.app.Fragment
+import com.example.tugas_akhir_android.Fragment.FragmentHomeUser
+import com.example.tugas_akhir_android.Fragment.FragmentProfilUser
+import nl.joery.animatedbottombar.AnimatedBottomBar
+
+class HomeUserActivity : AppCompatActivity() {
+    private var id_user: Int = 0
+    private var role_user: String? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_home_user)
+
+        id_user = intent.extras!!.getInt("id_user",0)
+        role_user = intent.extras!!.getString("role_user",null)
+
+
+        Log.d("idUserHomeUser", "Received id_user: $id_user")
+        Log.d("idUserHomeUser", "Received role_user: $role_user")
+//
+        val firstFragment = FragmentHomeUser()
+//        val secondFragment = FragmentDiagnose()
+        val thirdFragment = FragmentProfilUser()
+//        val fourthFragment = FragmentObat()
+
+
+        setCurrentFragment(firstFragment)
+
+
+        val bottomNavigationViewMember =
+            findViewById<AnimatedBottomBar>(R.id.bottomNavigationViewUser)
+
+        bottomNavigationViewMember.onTabSelected = {
+            Log.d("bottomNavigationView", "Selected tab: " + it.title)
+        }
+        bottomNavigationViewMember.onTabReselected = {
+            Log.d("bottomNavigationView", "Reselected tab: " + it.title)
+        }
+
+        bottomNavigationViewMember.setOnTabSelectListener(object : AnimatedBottomBar.OnTabSelectListener {
+            override fun onTabSelected(
+                lastIndex: Int,
+                lastTab: AnimatedBottomBar.Tab?,
+                newIndex: Int,
+                newTab: AnimatedBottomBar.Tab
+            ) {
+                when(newTab.id) {
+                    R.id.tab_home_user -> setCurrentFragment(firstFragment)
+                    R.id.tab_profil_user ->setCurrentFragment(thirdFragment)
+
+//                    R.id.tab_profil_member -> setCurrentFragment(secondFragment)
+//                    R.id.tab_profil_member -> {
+//                        val intent = Intent(this@HomeMemberActivity, PresensiInstrukturActivity::class.java)
+//                        startActivity(intent)
+//                    }
+
+//                    R.id.tab_obat -> {
+//                        val intent = Intent(this@HomeActivity, ObatActivity::class.java)
+//                        startActivity(intent)
+//                    }
+//
+//                    R.id.tab_supplier -> {
+//                        val intent = Intent(this@HomeActivity, SupplierActivity::class.java)
+//                        startActivity(intent)
+//                    }
+//
+//                    R.id.tab_profil -> setCurrentFragment(thirdFragment)
+//                    R.id.tab_profil -> {
+//                        val intent = Intent(this@HomeActivity, UserActivity::class.java)
+//                        startActivity(intent)
+//                    }
+
+//                    R.id.logout -> {
+//                        val builder: AlertDialog.Builder = AlertDialog.Builder(this@HomeAdminActivity)
+//                        builder.setMessage("Are you sure want to exit?")
+//                            .setPositiveButton("YES", object : DialogInterface.OnClickListener {
+//                                override fun onClick(dialogInterface: DialogInterface, i: Int) {
+//
+//                                    //Keluar dari aplikasi
+//                                    finishAndRemoveTask()
+//                                }
+//                            })
+//                            .show()
+//                    }
+                }
+            }
+        })
+    }
+    private fun setCurrentFragment(fragment: Fragment) =
+        supportFragmentManager.beginTransaction().apply {
+            replace(R.id.layout_fragment_user, fragment)
+            commit()
+        }
+
+    fun getIdUserLogin(): Int? {
+        return id_user
+    }
+
+    fun getRoleUserLogin(): String? {
+        return role_user
+    }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_edit_user"
+        android:title="Edit Profile" />
+
+    <item
+        android:id="@+id/tab_gantipas_user"
+        android:title="Ganti Password" />
+
+    <item
+        android:id="@+id/tab_deaktivasi_akun_user"
+        android:title="Deaktivasi Akun" />
+
+    <item
+        android:id="@+id/tab_logout_user"
+        android:title="Log Out" />
+</menu>
