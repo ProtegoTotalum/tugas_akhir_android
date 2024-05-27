@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/tab_edit_dokter"
+        android:title="Edit Profile" />
+
+    <item
+        android:id="@+id/tab_gantipas_dokter"
+        android:title="Ganti Password" />
+
+    <item
+        android:id="@+id/tab_logout_dokter"
+        android:title="Log Out" />
+</menu>

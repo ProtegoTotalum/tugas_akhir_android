@@ -9,9 +9,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
+import androidx.lifecycle.ViewModelProvider
 import com.example.tugas_akhir_android.Adapter.PenyakitAdapter
 import com.example.tugas_akhir_android.HomeAdminActivity
 import com.example.tugas_akhir_android.R
+import com.example.tugas_akhir_android.SharedViewModel
 import com.example.tugas_akhir_android.databinding.FragmentHomeBinding
 import com.google.android.material.button.MaterialButton
 
@@ -21,6 +23,7 @@ class FragmentHome : Fragment() {
     private val binding get() = _binding!!
     private var id_user: Int? = null
     private var role_user: String? = null
+    private lateinit var sharedViewModel: SharedViewModel
     private lateinit var diagnoseBtn: MaterialButton
     private lateinit var foodBtn: MaterialButton
     private lateinit var medicineBtn: MaterialButton
@@ -34,12 +37,13 @@ class FragmentHome : Fragment() {
     ): View? {
         val activity:HomeAdminActivity? = activity as HomeAdminActivity?
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-//        return inflater.inflate(R.layout.fragment_home, container, false)
+        sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
 
         id_user = activity?.getIdUserLogin() ?: 0
 
         role_user = activity?.getRoleUserLogin() ?: null
-
+        sharedViewModel.idUser.value = id_user
+        sharedViewModel.roleUser.value = role_user
         Log.d("idUserFragmentHome", "Received id_user: $id_user")
         Log.d("idUserFragmentHome", "Received role_user: $role_user")
         showDataFragment()

@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="10dp"
+    android:layout_marginEnd="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:id="@+id/cvBahanMakanan"
+    card_view:cardCornerRadius="15dp"
+    card_view:cardBackgroundColor="@color/cyanA700"
+    app:layout_constraintTop_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/base_cardview"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.511"
+        tools:layout_editor_absoluteX="-55dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fixed_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <TextView
+                android:id="@+id/textNamaBahanMakanan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NamaBahanMakanan"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:textStyle="bold"
+                android:letterSpacing="0.1"
+                android:fontFamily="@font/typo_graphica"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/editFoodBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                app:icon="@drawable/edit_full"
+                app:iconSize="30dp"
+                app:iconTint="@color/blue900"
+                app:strokeColor="@color/cyanA700"
+                android:layout_marginTop="10dp"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:contentDescription="Edit Food Button"
+                app:layout_constraintStart_toEndOf="@id/textNamaBahanMakanan"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/deleteFoodBtn"
+                android:layout_marginStart="16dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/deleteFoodBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                app:icon="@drawable/ic_delete_24"
+                app:iconSize="30dp"
+                app:iconTint="@color/red900"
+                app:strokeColor="@color/cyanA700"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="15dp"
+                style="@style/Widget.App.Button.OutlinedButton.IconOnly"
+                android:contentDescription="Delete Food Button"
+                app:layout_constraintStart_toEndOf="@+id/editFoodBtn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <ImageButton
+                android:id="@+id/expandFoodBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_expand_more_24"
+                android:backgroundTint="@color/cyanA700"
+                app:layout_constraintTop_toBottomOf="@+id/deleteFoodBtn"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Hidden View -->
+        <LinearLayout
+            android:id="@+id/layoutHidden"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fixed_layout">
+
+            <LinearLayout
+                android:id="@+id/takaranLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/textTakaranBahanMakanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:text="Takaran : "
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/etTakaranBahanMakanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="7dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/kaloriLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/textKaloriBahanMakanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:text="Kalori : "
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/etKaloriBahanMakanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:layout_marginStart="7dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/karboLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/textKarboBahanMakanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:text="Karbohidrat : "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/etKarboBahanMakanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="7dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/proNLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/textProNBahanMakanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:text="Protein N : "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/etProNBahanMakanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="7dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/proHLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/textProHBahanMakanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:text="Protein H : "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/etProHBahanMakanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="7dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lemakLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginBottom="5dp"
+                >
+
+                <TextView
+                    android:id="@+id/textLemakBahanMakanan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:text="Lemak : "
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:layout_marginStart="20dp"
+                    android:gravity="center_horizontal"/>
+
+                <TextView
+                    android:id="@+id/etLemakBahanMakanan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/louis_george_cafe"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:layout_marginStart="7dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

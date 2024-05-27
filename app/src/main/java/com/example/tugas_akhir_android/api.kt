@@ -1,6 +1,10 @@
 package com.example.tugas_akhir_android
 
+import com.example.tugas_akhir_android.DataClass.ResponseDataBahanMakanan
+import com.example.tugas_akhir_android.DataClass.ResponseDataDiagnosa
+import com.example.tugas_akhir_android.DataClass.ResponseDataGejala
 import com.example.tugas_akhir_android.DataClass.ResponseDataPenyakit
+import com.example.tugas_akhir_android.DataClass.ResponseDataPertanyaan
 import com.example.tugas_akhir_android.DataClass.ResponseDataUser
 import com.example.tugas_akhir_android.DataClass.UserResponse
 import retrofit2.Call
@@ -56,8 +60,6 @@ interface api {
 
 
 
-
-
     //Penyakit
     @GET("api/getpenyakit")
     open fun getDataPenyakitAll(): Call<ResponseDataPenyakit>?
@@ -76,4 +78,40 @@ interface api {
         @Field("cara_penanganan") cara_penanganan: String?,
         @Path("id") id_penyakit: Int?,
     ): Call<ResponseDataPenyakit>
+
+
+
+    //Diagnosa
+    @GET("api/showdiagnosauserall/{id}")
+    open fun getDataDiagnosaUserAll(@Path("id") id: Int): Call<ResponseDataDiagnosa>?
+
+    @GET("api/showdiagnosauser/{id_user}/{id_diagnosa}")
+    open fun getDataDiagnosaUser(
+        @Path("id_user") id_user: Int,
+        @Path("id_diagnosa") id_diagnosa:Int,
+    ): Call<ResponseDataDiagnosa>?
+
+    @GET("api/lastdiagnosa/{id}")
+    open fun getDataLastDiagnosa(@Path("id") id: Int): Call<ResponseDataDiagnosa>?
+
+
+
+    //Pertanyaan
+    @GET("api/showpertanyaan/{id_user}/{nomor_diagnosa}")
+    open fun getDataJawabanPertanyaanUser(
+        @Path("id_user") id_user: Int,
+        @Path("nomor_diagnosa") nomor_diagnosa:String,
+    ): Call<ResponseDataPertanyaan>?
+
+
+
+    //BahanMakanan
+    @GET("api/getbahanmakanan")
+    open fun getDataBahanMakananAll(): Call<ResponseDataBahanMakanan>?
+
+
+
+    //Gejala
+    @GET("api/getgejalaall")
+    open fun getDataGejalaAll(): Call<ResponseDataGejala>?
 }

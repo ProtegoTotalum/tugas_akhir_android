@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
+import com.example.tugas_akhir_android.Fragment.FragmentDiagnosaHistoryMain
 import com.example.tugas_akhir_android.Fragment.FragmentHomeUser
 import com.example.tugas_akhir_android.Fragment.FragmentProfilUser
 import nl.joery.animatedbottombar.AnimatedBottomBar
@@ -23,7 +24,7 @@ class HomeUserActivity : AppCompatActivity() {
         Log.d("idUserHomeUser", "Received role_user: $role_user")
 //
         val firstFragment = FragmentHomeUser()
-//        val secondFragment = FragmentDiagnose()
+        val secondFragment = FragmentDiagnosaHistoryMain()
         val thirdFragment = FragmentProfilUser()
 //        val fourthFragment = FragmentObat()
 
@@ -50,6 +51,7 @@ class HomeUserActivity : AppCompatActivity() {
             ) {
                 when(newTab.id) {
                     R.id.tab_home_user -> setCurrentFragment(firstFragment)
+                    R.id.tab_history_diagnosa_user -> setCurrentFragment(secondFragment)
                     R.id.tab_profil_user ->setCurrentFragment(thirdFragment)
 
 //                    R.id.tab_profil_member -> setCurrentFragment(secondFragment)

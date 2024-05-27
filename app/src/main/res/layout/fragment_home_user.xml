@@ -55,6 +55,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/cvHistory"
             android:orientation="horizontal"
+            android:gravity="center_horizontal"
             android:layout_marginTop="20dp">
 
             <com.google.android.material.button.MaterialButton
@@ -67,7 +68,7 @@
                 android:backgroundTint="@color/teal5"
                 app:shapeAppearanceOverlay="@style/RoundedButton"
                 style="@style/Widget.App.Button.OutlinedButton.IconOnly"
-                android:layout_marginStart="28dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:contentDescription="Diagnose Button"/>
 
@@ -135,7 +136,7 @@
             android:layout_marginEnd="10dp"
             android:id="@+id/cvHistory"
             card_view:cardCornerRadius="8dp"
-            card_view:cardBackgroundColor="@color/cyan600"
+            card_view:cardBackgroundColor="@color/cyanA400"
             app:layout_constraintTop_toBottomOf="@id/linearLayoutBtn"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -150,15 +151,14 @@
                     android:id="@+id/percentage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="87 %"
-                    android:textSize="64sp"
+                    android:textSize="35sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:fontFamily="@font/typo_round_bold_italic"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
                     android:layout_marginStart="25dp"
-                    android:layout_marginEnd="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_gravity="center_vertical"
                     />
 
                 <LinearLayout
@@ -166,7 +166,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginStart="15dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp">
@@ -176,7 +176,6 @@
                         android:layout_height="wrap_content"
                         android:textSize="16sp"
                         android:layout_weight="0.5"
-                        android:text="Tanggal Diagnosa"
                         android:textColor="@color/black"
                         android:fontFamily="@font/typo_graphica"
                         android:layout_gravity="center_horizontal"
@@ -188,7 +187,6 @@
                         android:layout_height="wrap_content"
                         android:textSize="15sp"
                         android:layout_weight="0.5"
-                        android:text="Jam Diagnosa"
                         android:textColor="@color/black"
                         android:fontFamily="@font/typo_graphica"
                         android:layout_gravity="center_horizontal"
@@ -201,7 +199,6 @@
                         android:layout_height="wrap_content"
                         android:textSize="24sp"
                         android:layout_weight="1"
-                        android:text="Penyakit"
                         android:textColor="@color/black"
                         android:textStyle="bold"
                         android:fontFamily="@font/typo_graphica"
