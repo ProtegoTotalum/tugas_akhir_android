@@ -44,13 +44,12 @@
                 android:textColor="@color/black"
                 android:textSize="24dp"
                 android:textStyle="bold"
-                android:letterSpacing="0.1"
-                android:fontFamily="@font/typo_graphica"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="30dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/editFoodBtn"
@@ -63,10 +62,9 @@
                 android:layout_marginTop="10dp"
                 style="@style/Widget.App.Button.OutlinedButton.IconOnly"
                 android:contentDescription="Edit Food Button"
-                app:layout_constraintStart_toEndOf="@id/textNamaBahanMakanan"
+                app:layout_constraintEnd_toStartOf="@+id/deleteFoodBtn"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/deleteFoodBtn"
-                android:layout_marginStart="16dp" />
+                android:layout_marginEnd="8dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/deleteFoodBtn"
@@ -80,9 +78,9 @@
                 android:layout_marginEnd="15dp"
                 style="@style/Widget.App.Button.OutlinedButton.IconOnly"
                 android:contentDescription="Delete Food Button"
-                app:layout_constraintStart_toEndOf="@+id/editFoodBtn"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
 
             <ImageButton
                 android:id="@+id/expandFoodBtn"

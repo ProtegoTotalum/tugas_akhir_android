@@ -65,6 +65,9 @@ class FragmentProfilUser : Fragment() {
                     prInputUmurUser.setText(it.umur_user)
                     prInputNoTelpUser.setText(it.no_telp_user)
                     prInputGenderUser.setText(it.gender_user)
+                    prInputAlamatUser.setText(it.alamat_user)
+                    prInputProvinsiUser.setText(it.provinsi_user)
+                    prInputKabKotUser.setText(it.kota_user)
                 }
             }
         })
@@ -96,6 +99,9 @@ class FragmentProfilUser : Fragment() {
                                 prInputUmurUser.setText(listUser[0].umur_user)
                                 prInputNoTelpUser.setText(listUser[0].no_telp_user)
                                 prInputGenderUser.setText(listUser[0].gender_user)
+                                prInputAlamatUser.setText(listUser[0].alamat_user)
+                                prInputProvinsiUser.setText(listUser[0].provinsi_user)
+                                prInputKabKotUser.setText(listUser[0].kota_user)
                             }
                         } else {
                             // Handle the case when the status is false
@@ -131,7 +137,7 @@ class FragmentProfilUser : Fragment() {
                             requireContext(),
                             "${response.body()?.message}",
                             FancyToast.LENGTH_LONG,
-                            FancyToast.ERROR,
+                            FancyToast.SUCCESS,
                             false
                         ).show()
                         val intent = Intent(requireContext(), LoginActivity::class.java)

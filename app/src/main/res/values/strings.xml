@@ -14,5 +14,18 @@
     <string name="btnrekomlarang">Rekomendasi &amp; Larangan</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_items">Select Items</string>
+    <string name="kabupatenkota">Kabupaten/Kota</string>
+    <string name="alamat">Alamat</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="list_dokter">List Dokter</string>
+    <string name="tambah">Tambah</string>
+    <string name="nama_bahan_makanan">Nama Bahan Makanan</string>
+    <string name="kalori">Kalori (kkal)</string>
+    <string name="takaran">Takaran (g)</string>
+    <string name="karbohidrat">Karbohidrat (g)</string>
+    <string name="protein_hewani_g">Protein Hewani (g)</string>
+    <string name="protein_nabati_g">Protein Nabati (g)</string>
+    <string name="lemak_g">Lemak (g)</string>
 
 </resources>

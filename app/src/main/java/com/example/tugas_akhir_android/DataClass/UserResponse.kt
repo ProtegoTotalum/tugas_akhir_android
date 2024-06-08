@@ -47,6 +47,18 @@ class UserResponse {
         @Expose
         var gender_user: String? = null
 
+        @SerializedName("alamat_user")
+        @Expose
+        var alamat_user: String? = null
+
+        @SerializedName("kota_user")
+        @Expose
+        var kota_user: String? = null
+
+        @SerializedName("provinsi_user")
+        @Expose
+        var provinsi_user: String? = null
+
         @SerializedName("role_user")
         @Expose
         var role_user: String? = null

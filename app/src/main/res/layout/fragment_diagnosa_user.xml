@@ -71,89 +71,41 @@
             app:layout_constraintTop_toBottomOf="@+id/titleText"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/textGerd"
+            app:layout_constraintBottom_toTopOf="@+id/clNamaDokterDiagnosa"
             />
-        <TextView
-            android:id="@+id/textGerd"
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/clNamaDokterDiagnosa"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/typo_round_bold_italic"
-            android:text="GERD"
-            android:textStyle="bold"
-            android:textColor="@color/teal1"
-            android:letterSpacing="0.05"
-            android:textSize="36sp"
-            android:gravity="center_horizontal"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             app:layout_constraintTop_toBottomOf="@+id/imageLambung"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/textGastritis"
-            />
-        <TextView
-            android:id="@+id/textGastritis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/typo_round_bold_italic"
-            android:text="Gastritis"
-            android:textStyle="bold"
-            android:textColor="@color/teal1"
-            android:letterSpacing="0.05"
-            android:textSize="36sp"
-            android:gravity="center_horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/textGerd"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/textGastroenteritis"
-            />
-        <TextView
-            android:id="@+id/textGastroenteritis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/typo_round_bold_italic"
-            android:text="Gastroenteritis"
-            android:textStyle="bold"
-            android:textColor="@color/teal1"
-            android:letterSpacing="0.05"
-            android:textSize="36sp"
-            android:gravity="center_horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/textGastritis"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/textGastroparesis"
-            />
+            >
 
-        <TextView
-            android:id="@+id/textGastroparesis"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/typo_round_bold_italic"
-            android:text="Gastroparesis"
-            android:textStyle="bold"
-            android:textColor="@color/teal1"
-            android:letterSpacing="0.05"
-            android:textSize="36sp"
-            android:gravity="center_horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/textGastroenteritis"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/textTukakLambung"
-            />
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textViewNamaDokterDiagnosa"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/list_dokter"
+                android:textColorHint="@color/teal2"
+                app:boxStrokeColor="@color/teal2"
+                app:errorEnabled="true">
 
-        <TextView
-            android:id="@+id/textTukakLambung"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/typo_round_bold_italic"
-            android:text="Tukak Lambung"
-            android:textStyle="bold"
-            android:textColor="@color/teal1"
-            android:letterSpacing="0.05"
-            android:textSize="36sp"
-            android:gravity="center_horizontal"
-            app:layout_constraintTop_toBottomOf="@+id/textGastroparesis"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+                <AutoCompleteTextView
+                    android:id="@+id/dokterACT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:textColor="@color/teal2"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
         <Button
             android:id="@+id/btnMulaiDiagnosa"
@@ -164,7 +116,7 @@
             android:fontFamily="@font/junegull_rg"
             android:text="Mulai"
             android:textSize="20dp"
-            app:layout_constraintTop_toBottomOf="@id/textTukakLambung"
+            app:layout_constraintTop_toBottomOf="@id/clNamaDokterDiagnosa"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,16 +13,22 @@ import nl.joery.animatedbottombar.AnimatedBottomBar
 class HomeAdminActivity : AppCompatActivity() {
     private var id_user: Int = 0
     private var role_user: String? = null
+    private var provinsi_user: String? = null
+    private var kabkot_user: String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_admin)
 
         id_user = intent.extras!!.getInt("id_user",0)
         role_user = intent.extras!!.getString("role_user",null)
+        provinsi_user = intent.extras!!.getString("provinsi_user",null)
+        kabkot_user = intent.extras!!.getString("kota_user",null)
 
 
         Log.d("idUserHomeAdmin", "Received id_user: $id_user")
         Log.d("idUserHomeAdmin", "Received role_user: $role_user")
+        Log.d("idUserHomeAdmin", "Received provinsi_user: $provinsi_user")
+        Log.d("idUserHomeAdmin", "Received kabkotkot_user: $kabkot_user")
 //
         val firstFragment = FragmentHome()
 //        val secondFragment = HomeUserActivity()
@@ -104,5 +110,13 @@ class HomeAdminActivity : AppCompatActivity() {
 
     fun getRoleUserLogin(): String? {
         return role_user
+    }
+
+    fun getProvinsiUserLogin(): String? {
+        return provinsi_user
+    }
+
+    fun getKabKotUserLogin(): String? {
+        return kabkot_user
     }
 }

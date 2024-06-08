@@ -23,6 +23,8 @@ class FragmentHome : Fragment() {
     private val binding get() = _binding!!
     private var id_user: Int? = null
     private var role_user: String? = null
+    private var provinsi_user: String? = null
+    private var kabkot_user: String? = null
     private lateinit var sharedViewModel: SharedViewModel
     private lateinit var diagnoseBtn: MaterialButton
     private lateinit var foodBtn: MaterialButton
@@ -42,10 +44,17 @@ class FragmentHome : Fragment() {
         id_user = activity?.getIdUserLogin() ?: 0
 
         role_user = activity?.getRoleUserLogin() ?: null
+        provinsi_user = activity?.getProvinsiUserLogin() ?: null
+        kabkot_user = activity?.getKabKotUserLogin() ?: null
+
         sharedViewModel.idUser.value = id_user
         sharedViewModel.roleUser.value = role_user
+        sharedViewModel.provinsiUser.value = provinsi_user
+        sharedViewModel.kabkotUser.value = kabkot_user
         Log.d("idUserFragmentHome", "Received id_user: $id_user")
         Log.d("idUserFragmentHome", "Received role_user: $role_user")
+        Log.d("idUserFragmentHome", "Received provinsi_user: $provinsi_user")
+        Log.d("idUserFragmentHome", "Received kabkot_user: $kabkot_user")
         showDataFragment()
 
         diagnoseBtn = binding.diagnoseBtn

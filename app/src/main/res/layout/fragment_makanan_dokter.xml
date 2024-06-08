@@ -115,7 +115,7 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editProfilText"
+                app:layout_constraintTop_toBottomOf="@id/tambahBahanMakananButton"
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginTop="5dp"
                 tools:ignore="NotSibling" />

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
 }
 
 apply plugin: 'kotlin-kapt'
@@ -90,8 +91,13 @@ dependencies {
 
     //GSON
     implementation 'com.google.code.gson:gson:2.10'
+
+    //Firebase
     implementation 'com.google.firebase:firebase-messaging:24.0.0'
     implementation 'com.google.firebase:firebase-messaging-ktx:24.0.0'
+
+    //WorkManager
+    implementation "androidx.work:work-runtime-ktx:2.9.0"
 
     //Unit Testing
     androidTestImplementation 'androidx.test:runner:1.5.2'

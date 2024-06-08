@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tugas_akhir_android.Adapter.PertanyaanAdapter
 import com.example.tugas_akhir_android.DataClass.GejalaData
+import com.example.tugas_akhir_android.DataClass.JawabanUserData
+import com.example.tugas_akhir_android.DataClass.PertanyaanData
 import com.example.tugas_akhir_android.DataClass.ResponseDataGejala
 import com.example.tugas_akhir_android.RClient
 import com.example.tugas_akhir_android.SharedViewModel
@@ -24,6 +26,7 @@ class FragmentRecyclePertanyaan : Fragment() {
     private val listGejala = ArrayList<GejalaData>()
     private lateinit var sharedViewModel: SharedViewModel
     private var id_user: Int? = null
+    private lateinit var pertanyaanAdapter: PertanyaanAdapter
 
 
     override fun onCreateView(
@@ -33,6 +36,7 @@ class FragmentRecyclePertanyaan : Fragment() {
         _binding = FragmentRecyclePertanyaanBinding.inflate(inflater, container,false)
         sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
         id_user = sharedViewModel.idUser.value
+        setupRecyclerView()
         getDataGejala()
         return binding.root
     }
@@ -42,6 +46,15 @@ class FragmentRecyclePertanyaan : Fragment() {
         super.onStart()
         getDataGejala()
     }
+
+    private fun setupRecyclerView() {
+        pertanyaanAdapter = PertanyaanAdapter(listGejala, requireContext())
+        binding.rvGejala.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = pertanyaanAdapter
+        }
+    }
+
     private fun getDataGejala(){
         binding.rvGejala.setHasFixedSize(true)
         binding.rvGejala.layoutManager = LinearLayoutManager(context)
@@ -59,13 +72,9 @@ class FragmentRecyclePertanyaan : Fragment() {
                 if(response.isSuccessful){
                     listGejala.clear()
                     response.body()?.let { responseData ->
-                        responseData.data.forEach { dataItem ->
-                            listGejala.add(dataItem)
-                        }
+                        listGejala.addAll(responseData.data)
                     }
-                    val adapter = PertanyaanAdapter (listGejala, requireContext())
-                    binding.rvGejala.adapter = adapter
-                    adapter.notifyDataSetChanged()
+                    pertanyaanAdapter.notifyDataSetChanged()
                 }else{
 
                 }
@@ -75,6 +84,10 @@ class FragmentRecyclePertanyaan : Fragment() {
                 Log.e("PertanyaanUserResponse", "API call failed", t)
             }
         })
+    }
+
+    fun getUserAnswers(): List<JawabanUserData> {
+        return pertanyaanAdapter.getUserAnswers()
     }
 
     override fun onDestroyView() {

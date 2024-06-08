@@ -81,9 +81,13 @@ class LoginActivity : AppCompatActivity() {
 
                     val idUser = login.user?.id
                     val role = login.user?.role_user
+                    val provinsi_user = login.user?.provinsi_user
+                    val kota_user = login.user?.kota_user
                     val deaktivasi = login.user?.deaktivasi
                     Log.d("cekLogin", "id_user:$idUser")
                     Log.d("cekLogin", "role:$role")
+                    Log.d("cekLogin", "provinsi_user:$provinsi_user")
+                    Log.d("cekLogin", "kota_user:$kota_user")
                     Log.d("cekLogin", "deaktivasi:$deaktivasi")
 
                     if(deaktivasi == 1 || deaktivasi != null){
@@ -97,6 +101,8 @@ class LoginActivity : AppCompatActivity() {
                             ).apply {
                                 putExtra("id_user", idUser)
                                 putExtra("role_user", role)
+                                putExtra("provinsi_user", provinsi_user)
+                                putExtra("kota_user", kota_user)
                             }
                             startActivity(moveHome)
                         }else {
@@ -106,6 +112,8 @@ class LoginActivity : AppCompatActivity() {
                                 ).apply {
                                     putExtra("id_user", idUser)
                                     putExtra("role_user", role)
+                                    putExtra("provinsi_user", provinsi_user)
+                                    putExtra("kota_user", kota_user)
                                 }
                                 startActivity(moveHome)
                             } else {
@@ -114,6 +122,8 @@ class LoginActivity : AppCompatActivity() {
                                 ).apply {
                                     putExtra("id_user", idUser)
                                     putExtra("role_user", role)
+                                    putExtra("provinsi_user", provinsi_user)
+                                    putExtra("kota_user", kota_user)
                                 }
                                 startActivity(moveHome)
                             }

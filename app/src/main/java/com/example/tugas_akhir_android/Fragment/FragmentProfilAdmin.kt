@@ -64,6 +64,9 @@ class FragmentProfilAdmin : Fragment() {
                     prInputUmurAdmin.setText(it.umur_user)
                     prInputNoTelpAdmin.setText(it.no_telp_user)
                     prInputGenderAdmin.setText(it.gender_user)
+                    prInputAlamatAdmin.setText(it.alamat_user)
+                    prInputProvinsiAdmin.setText(it.provinsi_user)
+                    prInputKabKotAdmin.setText(it.kota_user)
                     prInputRoleAdmin.setText(it.role_user)
                 }
             }
@@ -96,6 +99,9 @@ class FragmentProfilAdmin : Fragment() {
                                 prInputUmurAdmin.setText(listAdmin[0].umur_user)
                                 prInputNoTelpAdmin.setText(listAdmin[0].no_telp_user)
                                 prInputGenderAdmin.setText(listAdmin[0].gender_user)
+                                prInputAlamatAdmin.setText(listAdmin[0].alamat_user)
+                                prInputProvinsiAdmin.setText(listAdmin[0].provinsi_user)
+                                prInputKabKotAdmin.setText(listAdmin[0].kota_user)
                                 prInputRoleAdmin.setText(listAdmin[0].role_user)
                             }
                         } else {

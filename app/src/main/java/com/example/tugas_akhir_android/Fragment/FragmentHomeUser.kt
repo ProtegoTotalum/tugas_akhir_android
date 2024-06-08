@@ -31,6 +31,8 @@ class FragmentHomeUser : Fragment() {
     private var id_user: Int? = null
     private var id_user_view: Int? = null
     private var role_user: String? = null
+    private var provinsi_user: String? = null
+    private var kabkot_user: String? = null
     private val listDiagnosa = ArrayList<DiagnosaData>()
     private lateinit var sharedViewModel: SharedViewModel
     private var cardView: CardView? = null
@@ -49,11 +51,20 @@ class FragmentHomeUser : Fragment() {
         id_user = activity?.getIdUserLogin() ?: 0
 
         role_user = activity?.getRoleUserLogin() ?: null
+        provinsi_user = activity?.getProvinsiUserLogin() ?: null
+        kabkot_user = activity?.getKabKotUserLogin() ?: null
+
         sharedViewModel.roleUser.value = role_user
+        sharedViewModel.provinsiUser.value = provinsi_user
+        sharedViewModel.kabkotUser.value = kabkot_user
         sharedViewModel.idUser.value = id_user_view
         id_user?.let{ getDataLastDiagnosa(it)}
+
         Log.d("idUserFragmentHome", "Received id_user: $id_user")
         Log.d("idUserFragmentHome", "Received role_user: $role_user")
+        Log.d("idUserFragmentHome", "Received provinsi_user: $provinsi_user")
+        Log.d("idUserFragmentHome", "Received kabkot_user: $kabkot_user")
+
 
         cardView = binding.cvHistory
 
@@ -71,6 +82,15 @@ class FragmentHomeUser : Fragment() {
                     addToBackStack(null) // Tambahkan transaksi ke back stack jika ingin bisa kembali ke fragment sebelumnya
                     commit()
                 }
+            }
+        }
+
+        binding.scheduleBtn.setOnClickListener{
+            val fragmentJadwalMakan = FragmentJadwalMakan()
+            parentFragmentManager.beginTransaction().apply {
+                replace(R.id.layout_fragment_user, fragmentJadwalMakan) // R.id.layout_fragment berasal dari HomeActivity
+                addToBackStack(null) // Tambahkan transaksi ke back stack jika ingin bisa kembali ke fragment sebelumnya
+                commit()
             }
         }
 

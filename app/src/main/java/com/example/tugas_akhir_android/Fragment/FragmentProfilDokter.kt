@@ -64,6 +64,9 @@ class FragmentProfilDokter : Fragment() {
                     prInputUmurDokter.setText(it.umur_user)
                     prInputNoTelpDokter.setText(it.no_telp_user)
                     prInputGenderDokter.setText(it.gender_user)
+                    prInputAlamatDokter.setText(it.alamat_user)
+                    prInputProvinsiDokter.setText(it.provinsi_user)
+                    prInputKabKotDokter.setText(it.kota_user)
                     prInputRoleDokter.setText(it.role_user)
                 }
             }
@@ -96,6 +99,9 @@ class FragmentProfilDokter : Fragment() {
                                 prInputUmurDokter.setText(listDokter[0].umur_user)
                                 prInputNoTelpDokter.setText(listDokter[0].no_telp_user)
                                 prInputGenderDokter.setText(listDokter[0].gender_user)
+                                prInputAlamatDokter.setText(listDokter[0].alamat_user)
+                                prInputProvinsiDokter.setText(listDokter[0].provinsi_user)
+                                prInputKabKotDokter.setText(listDokter[0].kota_user)
                                 prInputRoleDokter.setText(listDokter[0].role_user)
                             }
                         } else {
